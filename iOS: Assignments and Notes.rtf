@@ -1,496 +1,385 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2761
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
-{\colortbl;\red255\green255\blue255;\red14\green110\blue109;\red255\green255\blue254;\red0\green0\blue0;
-\red19\green118\blue70;\red83\green83\blue83;\red0\green0\blue255;\red144\green1\blue18;\red15\green112\blue1;
-}
-{\*\expandedcolortbl;;\cssrgb\c0\c50196\c50196;\cssrgb\c100000\c100000\c99608;\cssrgb\c0\c0\c0;
-\cssrgb\c3529\c52549\c34510;\cssrgb\c40000\c40000\c40000;\cssrgb\c0\c0\c100000;\cssrgb\c63922\c8235\c8235;\cssrgb\c0\c50196\c0;
-}
-\margl1440\margr1440\vieww14040\viewh14380\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+Assignment 2 - 8/15 
 
-\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 Assignment\cf0 \strokec4  \cf5 \strokec5 2\cf0 \strokec4  \cf6 \strokec6 -\cf0 \strokec4  \cf5 \strokec5 8\cf6 \strokec6 /15\cf0 \strokec4  \cb1 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 1\cf0 \strokec4 . \cf2 \strokec2 Value\cf0 \strokec4  \cf7 \strokec7 Type\cf0 \strokec4  vs. \cf2 \strokec2 Reference\cf0 \strokec4  \cf7 \strokec7 Type\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Value\cf0 \strokec4  \cf7 \strokec7 Type\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Makes\cf0 \strokec4  a copy when assigned or passed (like \cf7 \strokec7 struct\cf0 \strokec4  and \cf7 \strokec7 enum\cf0 \strokec4 ).\cb1 \
-\cb3     \cf2 \strokec2 Reference\cf0 \strokec4  \cf7 \strokec7 Type\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Doesn\cf0 \strokec4 \'92t copy\cf6 \strokec6 ,\cf0 \strokec4  it just shares the same instance (like \cf7 \strokec7 class\cf0 \strokec4 ).\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 2\cf0 \strokec4 . \cf2 \strokec2 Difference\cf0 \strokec4  \cf2 \strokec2 Between\cf0 \strokec4  \cf2 \strokec2 Classes\cf0 \strokec4  and \cf2 \strokec2 Structs\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Class\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Reference\cf0 \strokec4  type\cf6 \strokec6 ,\cf0 \strokec4  supports inheritance.\cb1 \
-\cb3     \cf2 \strokec2 Struct\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Value\cf0 \strokec4  type\cf6 \strokec6 ,\cf0 \strokec4  no inheritance.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 3\cf0 \strokec4 . \cf2 \strokec2 When\cf0 \strokec4  to \cf2 \strokec2 Use\cf0 \strokec4  \cf2 \strokec2 Classes\cf0 \strokec4  vs. \cf2 \strokec2 Structs\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Use\cf0 \strokec4  \cf7 \strokec7 class\cf0 \strokec4  when you need inheritance or reference sharing.\cb1 \
-\cb3     \cf2 \strokec2 Use\cf0 \strokec4  \cf7 \strokec7 struct\cf0 \strokec4  \cf7 \strokec7 for\cf0 \strokec4  simpler data that doesn't need inheritance and can be copied easily.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 4\cf0 \strokec4 . \cf2 \strokec2 Advantages\cf0 \strokec4  of \cf2 \strokec2 Structs\cf0 \strokec4  \cf2 \strokec2 Over\cf0 \strokec4  \cf2 \strokec2 Classes\cf0 \strokec4  (or \cf2 \strokec2 Vice\cf0 \strokec4  \cf2 \strokec2 Versa\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Structs\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Faster\cf0 \strokec4  because of value copying\cf6 \strokec6 ,\cf0 \strokec4  safer with no shared states.\cb1 \
-\cb3     \cf2 \strokec2 Classes\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Better\cf0 \strokec4  \cf7 \strokec7 for\cf0 \strokec4  complex models\cf6 \strokec6 ,\cf0 \strokec4  supports inheritance.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 5\cf0 \strokec4 . \cf2 \strokec2 What\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  an \cf2 \strokec2 Enum\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 An\cf0 \strokec4  \cf7 \strokec7 enum\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  a type that has a \cf7 \strokec7 set\cf0 \strokec4  of predefined cases. \cf2 \strokec2 Like\cf0 \strokec4  a list of related values you can pick from.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 6\cf0 \strokec4 . \cf2 \strokec2 Difference\cf0 \strokec4  \cf2 \strokec2 Between\cf0 \strokec4  \cf2 \strokec2 Raw\cf0 \strokec4  \cf2 \strokec2 Values\cf0 \strokec4  and \cf2 \strokec2 Associated\cf0 \strokec4  \cf2 \strokec2 Values\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Raw\cf0 \strokec4  \cf2 \strokec2 Values\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Fixed\cf0 \strokec4  values like \cf7 \strokec7 enum\cf0 \strokec4  \cf2 \strokec2 Direction\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 String\cf0 \strokec4  \{ \cf7 \strokec7 case\cf0 \strokec4  up \cf6 \strokec6 =\cf0 \strokec4  \cf8 \strokec8 "UP"\cf0 \strokec4  \}.\cb1 \
-\cb3     \cf2 \strokec2 Associated\cf0 \strokec4  \cf2 \strokec2 Values\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Extra\cf0 \strokec4  info you attach to each \cf7 \strokec7 case\cf0 \strokec4  like \cf7 \strokec7 case\cf0 \strokec4  success(message\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 String\cf0 \strokec4 ).\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 7\cf0 \strokec4 . \cf2 \strokec2 How\cf0 \strokec4  to \cf2 \strokec2 Make\cf0 \strokec4  a \cf2 \strokec2 Function\cf0 \strokec4  \cf2 \strokec2 Optional\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  a \cf7 \strokec7 Protocol\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Use\cf0 \strokec4  \cf7 \strokec7 @objc\cf0 \strokec4  before the \cf7 \strokec7 protocol\cf0 \strokec4  and add \cf7 \strokec7 optional\cf0 \strokec4  before the method\cf6 \strokec6 ,\cf0 \strokec4  like\cf6 \strokec6 :\cf0 \cb1 \strokec4 \
-\
-\cb3     @obj protocal \cf2 \strokec2 MyProtocol\cf0 \strokec4  \{\cb1 \
-\cb3       @obj \cf7 \strokec7 optional\cf0 \strokec4  \cf7 \strokec7 func\cf0 \strokec4  myFunction()\cb1 \
-\cb3     \}\cb1 \
-\
-\cb3     \cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 8\cf0 \strokec4 . \cf2 \strokec2 What\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  a \cf7 \strokec7 Protocol\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 A\cf0 \strokec4  \cf7 \strokec7 protocol\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  like a contract that lists what properties and methods a conforming type should have.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 9\cf0 \strokec4 . \cf2 \strokec2 What\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  \cf2 \strokec2 Inheritance\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Inheritance\cf0 \strokec4  means one \cf7 \strokec7 class\cf0 \strokec4  can \cf8 \strokec8 "inherit"\cf0 \strokec4  properties and methods from another \cf7 \strokec7 class\cf0 \strokec4 .\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 10\cf0 \strokec4 . \cf2 \strokec2 Different\cf0 \strokec4  \cf2 \strokec2 Types\cf0 \strokec4  of \cf2 \strokec2 Inheritance\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Single\cf0 \strokec4  \cf2 \strokec2 Inheritance\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 A\cf0 \strokec4  \cf7 \strokec7 class\cf0 \strokec4  inherits from one parent.\cb1 \
-\cb3     \cf2 \strokec2 Multiple\cf0 \strokec4  \cf2 \strokec2 Inheritance\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Inheriting\cf0 \strokec4  from multiple classes (not directly supported \cf7 \strokec7 in\cf0 \strokec4  \cf2 \strokec2 Swift\cf0 \strokec4 ).\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 11\cf0 \strokec4 . \cf2 \strokec2 Is\cf0 \strokec4  \cf2 \strokec2 Multiple\cf0 \strokec4  \cf2 \strokec2 Inheritance\cf0 \strokec4  \cf2 \strokec2 Supported\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  iOS \cf2 \strokec2 Swift\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 No\cf6 \strokec6 ,\cf0 \strokec4  \cf2 \strokec2 Swift\cf0 \strokec4  doesn\'92t support multiple inheritance. \cf2 \strokec2 You\cf0 \strokec4  can use protocols instead.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 12\cf0 \strokec4 . \cf2 \strokec2 What\cf0 \strokec4  are \cf2 \strokec2 Initializers\cf6 \strokec6 ,\cf0 \strokec4  and \cf2 \strokec2 Their\cf0 \strokec4  \cf2 \strokec2 Uses\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Initializers\cf0 \strokec4  \cf7 \strokec7 set\cf0 \strokec4  up your object when it\'92s created. \cf2 \strokec2 They\cf0 \strokec4  give initial values to properties.\cb1 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 Example\cf0 \strokec4  of \cf5 \strokec5 3\cf0 \strokec4  \cf2 \strokec2 Entities\cf0 \strokec4  with \cf5 \strokec5 5\cf0 \strokec4  \cf2 \strokec2 Attributes\cf0 \strokec4  and \cf5 \strokec5 3\cf0 \strokec4  \cf2 \strokec2 Actions\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Car\cf0 \cb1 \strokec4 \
-\cb3         \cf2 \strokec2 Attributes\cf6 \strokec6 :\cf0 \strokec4  make\cf6 \strokec6 ,\cf0 \strokec4  model\cf6 \strokec6 ,\cf0 \strokec4  year\cf6 \strokec6 ,\cf0 \strokec4  color\cf6 \strokec6 ,\cf0 \strokec4  mileage\cb1 \
-\cb3         \cf2 \strokec2 Actions\cf6 \strokec6 :\cf0 \strokec4  drive()\cf6 \strokec6 ,\cf0 \strokec4  park()\cf6 \strokec6 ,\cf0 \strokec4  honk()\cb1 \
-\
-\cb3     \cf2 \strokec2 Phone\cf0 \cb1 \strokec4 \
-\cb3         \cf2 \strokec2 Attributes\cf6 \strokec6 :\cf0 \strokec4  brand\cf6 \strokec6 ,\cf0 \strokec4  model\cf6 \strokec6 ,\cf0 \strokec4  storage\cf6 \strokec6 ,\cf0 \strokec4  batteryLevel\cf6 \strokec6 ,\cf0 \strokec4  screenSize\cb1 \
-\cb3         \cf2 \strokec2 Actions\cf6 \strokec6 :\cf0 \strokec4  call()\cf6 \strokec6 ,\cf0 \strokec4  text()\cf6 \strokec6 ,\cf0 \strokec4  browse()\cb1 \
-\
-\cb3     \cf2 \strokec2 Book\cf0 \cb1 \strokec4 \
-\cb3         \cf2 \strokec2 Attributes\cf6 \strokec6 :\cf0 \strokec4  title\cf6 \strokec6 ,\cf0 \strokec4  author\cf6 \strokec6 ,\cf0 \strokec4  pages\cf6 \strokec6 ,\cf0 \strokec4  genre\cf6 \strokec6 ,\cf0 \strokec4  publisher\cb1 \
-\cb3         \cf2 \strokec2 Actions\cf6 \strokec6 :\cf0 \strokec4  read()\cf6 \strokec6 ,\cf0 \strokec4  bookmarkPage()\cf6 \strokec6 ,\cf0 \strokec4  rate()\cb1 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 Function\cf0 \strokec4  to \cf2 \strokec2 Find\cf0 \strokec4  \cf2 \strokec2 Largest\cf0 \strokec4  \cf2 \strokec2 Number\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  \cf2 \strokec2 Integer\cf0 \strokec4  \cf2 \strokec2 Array\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 func\cf0 \strokec4  findLargestNumber(\cf7 \strokec7 in\cf0 \strokec4  array\cf6 \strokec6 :\cf0 \strokec4  [\cf2 \strokec2 Int\cf0 \strokec4 ]) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Int\cf6 \strokec6 ?\cf0 \strokec4  \{\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf7 \strokec7 return\cf0 \strokec4  array.\cf2 \strokec2 max\cf0 \strokec4 ()\cb1 \
-\cb3 \}\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 Create\cf0 \strokec4  a \cf2 \strokec2 Calculator\cf0 \strokec4  \cf2 \strokec2 Class\cf0 \strokec4  with \cf7 \strokec7 Protocol\cf0 \strokec4  \cf7 \strokec7 for\cf0 \strokec4  \cf2 \strokec2 Addition\cf6 \strokec6 ,\cf0 \strokec4  \cf2 \strokec2 Subtraction\cf6 \strokec6 ,\cf0 \strokec4  \cf2 \strokec2 Multiplication\cf6 \strokec6 ,\cf0 \strokec4  and \cf2 \strokec2 Division\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 import\cf0 \strokec4  \cf2 \strokec2 UIKit\cf0 \cb1 \strokec4 \
-\
-\cf7 \cb3 \strokec7 protocol\cf0 \strokec4  \cf2 \strokec2 Calculatable\cf0 \strokec4  \{\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf7 \strokec7 func\cf0 \strokec4  add(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \cb1 \strokec4 \
-\cb3     \cf7 \strokec7 func\cf0 \strokec4  subtract(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \cb1 \strokec4 \
-\cb3     \cf7 \strokec7 func\cf0 \strokec4  multiply(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \cb1 \strokec4 \
-\cb3     \cf7 \strokec7 func\cf0 \strokec4  divide(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\cb3 \}\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 class\cf0 \strokec4  \cf2 \strokec2 Calculator\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Calculatable\cf0 \strokec4  \{\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf7 \strokec7 func\cf0 \strokec4  add(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4  \{\cb1 \
-\cb3         \cf7 \strokec7 return\cf0 \strokec4  a \cf6 \strokec6 +\cf0 \strokec4  b\cb1 \
-\cb3     \}\cb1 \
-\cb3    \cb1 \
-\cb3     \cf7 \strokec7 func\cf0 \strokec4  subtract(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4  \{\cb1 \
-\cb3         \cf7 \strokec7 return\cf0 \strokec4  a \cf6 \strokec6 -\cf0 \strokec4  b\cb1 \
-\cb3     \}\cb1 \
-\cb3    \cb1 \
-\cb3     \cf7 \strokec7 func\cf0 \strokec4  multiply(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4  \{\cb1 \
-\cb3         \cf7 \strokec7 return\cf0 \strokec4  a \cf6 \strokec6 *\cf0 \strokec4  b\cb1 \
-\cb3     \}\cb1 \
-\cb3    \cb1 \
-\cb3     \cf7 \strokec7 func\cf0 \strokec4  divide(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ?\cf0 \strokec4  \{\cb1 \
-\cb3         \cf7 \strokec7 return\cf0 \strokec4  b \cf6 \strokec6 !=\cf0 \strokec4  \cf5 \strokec5 0\cf0 \strokec4  \cf6 \strokec6 ?\cf0 \strokec4  a \cf6 \strokec6 /\cf0 \strokec4  b \cf6 \strokec6 :\cf0 \strokec4  \cf7 \strokec7 nil\cf0 \cb1 \strokec4 \
-\cb3     \}\cb1 \
-\cb3 \}\cb1 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 Explanation\cf6 \strokec6 :\cf0 \cb1 \strokec4 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 1\cf0 \strokec4 . \cf7 \strokec7 protocol\cf0 \strokec4  \cf2 \strokec2 Calculatable\cf6 \strokec6 :\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 This\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  \cf7 \strokec7 where\cf0 \strokec4  we define a \cf7 \strokec7 protocol\cf6 \strokec6 ,\cf0 \strokec4  which \cf7 \strokec7 is\cf0 \strokec4  basically a blueprint \cf7 \strokec7 for\cf0 \strokec4  methods a \cf7 \strokec7 class\cf0 \strokec4  has to follow. \cf2 \strokec2 The\cf0 \strokec4  \cf2 \strokec2 Calculatable\cf0 \strokec4  \cf7 \strokec7 protocol\cf0 \strokec4  lists four functions\cf6 \strokec6 :\cf0 \strokec4  add\cf6 \strokec6 ,\cf0 \strokec4  subtract\cf6 \strokec6 ,\cf0 \strokec4  multiply\cf6 \strokec6 ,\cf0 \strokec4  and divide. \cf7 \strokec7 Any\cf0 \strokec4  \cf7 \strokec7 class\cf0 \strokec4  that uses this \cf7 \strokec7 protocol\cf0 \strokec4  must include these functions.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 2\cf0 \strokec4 . \cf7 \strokec7 class\cf0 \strokec4  \cf2 \strokec2 Calculator\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Calculatable\cf6 \strokec6 :\cf0 \cb1 \strokec4 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 This\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  the main \cf7 \strokec7 class\cf0 \strokec4 . \cf2 \strokec2 It\cf0 \strokec4  follows (or conforms to) the \cf2 \strokec2 Calculatable\cf0 \strokec4  \cf7 \strokec7 protocol\cf6 \strokec6 ,\cf0 \strokec4  meaning it has to include the add\cf6 \strokec6 ,\cf0 \strokec4  subtract\cf6 \strokec6 ,\cf0 \strokec4  multiply\cf6 \strokec6 ,\cf0 \strokec4  and divide methods.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 3\cf0 \strokec4 . \cf2 \strokec2 Function\cf0 \strokec4  \cf2 \strokec2 Details\cf6 \strokec6 :\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     add(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Adds\cf0 \strokec4  two numbers.\cb1 \
-\cb3     subtract(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Subtracts\cf0 \strokec4  the second number from the first one.\cb1 \
-\cb3     multiply(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Multiplies\cf0 \strokec4  the two numbers together.\cb1 \
-\cb3     divide(_ a\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  _ b\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ?:\cf0 \strokec4  \cf2 \strokec2 Divides\cf0 \strokec4  the first number by the second. \cf2 \strokec2 Since\cf0 \strokec4  dividing by zero isn\'92t allowed\cf6 \strokec6 ,\cf0 \strokec4  this function returns an \cf7 \strokec7 optional\cf0 \strokec4  (meaning it can be \cf7 \strokec7 nil\cf0 \strokec4  \cf7 \strokec7 if\cf0 \strokec4  the division \cf7 \strokec7 is\cf0 \strokec4  invalid).\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 4\cf0 \strokec4 . \cf2 \strokec2 Example\cf0 \strokec4  \cf2 \strokec2 Usage\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 We\cf0 \strokec4  make a \cf2 \strokec2 Calculator\cf0 \strokec4  object called myCalculator. \cf2 \strokec2 Then\cf6 \strokec6 ,\cf0 \strokec4  we can use it to add or divide numbers. \cf2 \strokec2 When\cf0 \strokec4  dividing by zero\cf6 \strokec6 ,\cf0 \strokec4  it gives us \cf7 \strokec7 nil\cf6 \strokec6 ,\cf0 \strokec4  so the app doesn\'92t crash.\cb1 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 Assignment\cf0 \strokec4  \cf5 \strokec5 3\cf0 \strokec4  \cf6 \strokec6 -\cf0 \strokec4  \cf5 \strokec5 8\cf6 \strokec6 /16\cf0 \cb1 \strokec4 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 1\cf0 \strokec4 . \cf2 \strokec2 Difference\cf0 \strokec4  \cf2 \strokec2 Between\cf0 \strokec4  \cf7 \strokec7 guard\cf0 \strokec4  \cf7 \strokec7 let\cf0 \strokec4  and \cf7 \strokec7 if\cf0 \strokec4  \cf7 \strokec7 let\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf7 \strokec7 if\cf0 \strokec4  \cf7 \strokec7 let\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Used\cf0 \strokec4  when you want to unwrap an \cf7 \strokec7 optional\cf0 \strokec4  and run code only \cf7 \strokec7 if\cf0 \strokec4  it has a value. \cf2 \strokec2 The\cf0 \strokec4  rest of the code \cf7 \strokec7 is\cf0 \strokec4  nested inside the \cf7 \strokec7 if\cf0 \strokec4  block.\cb1 \
-\cb3     \cf7 \strokec7 guard\cf0 \strokec4  \cf7 \strokec7 let\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Also\cf0 \strokec4  used \cf7 \strokec7 for\cf0 \strokec4  unwrapping optionals\cf6 \strokec6 ,\cf0 \strokec4  but it\'92s better when you want to exit early \cf7 \strokec7 if\cf0 \strokec4  the \cf7 \strokec7 optional\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  \cf7 \strokec7 nil\cf0 \strokec4 . \cf2 \strokec2 It\cf0 \strokec4 \'92s more of an early exit check.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 2\cf0 \strokec4 . \cf2 \strokec2 When\cf0 \strokec4  to \cf2 \strokec2 Use\cf0 \strokec4  \cf7 \strokec7 guard\cf0 \strokec4  \cf7 \strokec7 let\cf0 \strokec4  vs. \cf7 \strokec7 if\cf0 \strokec4  \cf7 \strokec7 let\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Use\cf0 \strokec4  \cf7 \strokec7 if\cf0 \strokec4  \cf7 \strokec7 let\cf0 \strokec4  when you only need to \cf7 \strokec7 do\cf0 \strokec4  something specific when the \cf7 \strokec7 optional\cf0 \strokec4  has a value.\cb1 \
-\cb3     \cf2 \strokec2 Use\cf0 \strokec4  \cf7 \strokec7 guard\cf0 \strokec4  \cf7 \strokec7 let\cf0 \strokec4  when you want to ensure the \cf7 \strokec7 optional\cf0 \strokec4  has a value before continuing\cf6 \strokec6 ,\cf0 \strokec4  and you need to exit early \cf7 \strokec7 if\cf0 \strokec4  it doesn\'92t.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 3\cf0 \strokec4 . \cf2 \strokec2 Different\cf0 \strokec4  \cf2 \strokec2 Types\cf0 \strokec4  of \cf2 \strokec2 Properties\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Stored\cf0 \strokec4  \cf2 \strokec2 Properties\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 These\cf0 \strokec4  store values \cf7 \strokec7 in\cf0 \strokec4  classes or structs.\cb1 \
-\cb3     \cf2 \strokec2 Computed\cf0 \strokec4  \cf2 \strokec2 Properties\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 These\cf0 \strokec4  don\'92t store values but calculate them when accessed.\cb1 \
-\cb3     \cf2 \strokec2 Lazy\cf0 \strokec4  \cf2 \strokec2 Properties\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 These\cf0 \strokec4  are only calculated once when they\'92re needed.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 4\cf0 \strokec4 . \cf2 \strokec2 Difference\cf0 \strokec4  \cf2 \strokec2 Between\cf0 \strokec4  \cf2 \strokec2 Stored\cf0 \strokec4  and \cf2 \strokec2 Computed\cf0 \strokec4  \cf2 \strokec2 Properties\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Stored\cf0 \strokec4  properties hold a value directly.\cb1 \
-\cb3     \cf2 \strokec2 Computed\cf0 \strokec4  properties calculate a value on the fly whenever you access them.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 5\cf0 \strokec4 . \cf2 \strokec2 When\cf0 \strokec4  to \cf2 \strokec2 Use\cf0 \strokec4  \cf2 \strokec2 Lazy\cf0 \strokec4  \cf2 \strokec2 Properties\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Use\cf0 \strokec4  them when the property\'92s value takes a lot of resources to calculate\cf6 \strokec6 ,\cf0 \strokec4  and you don\'92t want it to be done until it\'92s really needed.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 6\cf0 \strokec4 . \cf2 \strokec2 Advantage\cf0 \strokec4  of \cf2 \strokec2 Using\cf0 \strokec4  \cf2 \strokec2 Lazy\cf0 \strokec4  \cf2 \strokec2 Properties\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 They\cf0 \strokec4  save resources by not initializing until they\'92re first used.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 7\cf0 \strokec4 . \cf2 \strokec2 What\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  a \cf2 \strokec2 Static\cf0 \strokec4  \cf2 \strokec2 Property\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 A\cf0 \strokec4  \cf7 \strokec7 static\cf0 \strokec4  property belongs to the type itself\cf6 \strokec6 ,\cf0 \strokec4  not instances of the type. \cf2 \strokec2 All\cf0 \strokec4  instances share the same \cf7 \strokec7 static\cf0 \strokec4  property.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 8\cf0 \strokec4 . \cf2 \strokec2 What\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  an \cf2 \strokec2 Extension\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Extensions\cf0 \strokec4  \cf7 \strokec7 let\cf0 \strokec4  you add new functionality to existing classes\cf6 \strokec6 ,\cf0 \strokec4  structs\cf6 \strokec6 ,\cf0 \strokec4  or enums without modifying their original code.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 9\cf0 \strokec4 . \cf2 \strokec2 What\cf0 \strokec4  \cf2 \strokec2 Makes\cf0 \strokec4  \cf2 \strokec2 Extensions\cf0 \strokec4  \cf2 \strokec2 Powerful\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 They\cf0 \strokec4  allow you to add functions\cf6 \strokec6 ,\cf0 \strokec4  initializers\cf6 \strokec6 ,\cf0 \strokec4  and computed properties to existing types\cf6 \strokec6 ,\cf0 \strokec4  even ones you don\'92t own (like those from the system).\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 10\cf0 \strokec4 . \cf2 \strokec2 Can\cf0 \strokec4  \cf2 \strokec2 We\cf0 \strokec4  \cf2 \strokec2 Add\cf0 \strokec4  \cf2 \strokec2 Properties\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  \cf2 \strokec2 Extensions\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 You\cf0 \strokec4  can only add computed properties\cf6 \strokec6 ,\cf0 \strokec4  not stored properties\cf6 \strokec6 ,\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  extensions.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 11\cf0 \strokec4 . \cf2 \strokec2 Different\cf0 \strokec4  \cf2 \strokec2 Access\cf0 \strokec4  \cf2 \strokec2 Modifiers\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf7 \strokec7 public\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Accessible\cf0 \strokec4  from anywhere.\cb1 \
-\cb3     \cf7 \strokec7 open\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Like\cf0 \strokec4  \cf7 \strokec7 public\cf6 \strokec6 ,\cf0 \strokec4  but also allows subclassing outside the module.\cb1 \
-\cb3     \cf7 \strokec7 internal\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Accessible\cf0 \strokec4  within the module.\cb1 \
-\cb3     \cf7 \strokec7 fileprivate\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Accessible\cf0 \strokec4  within the same file.\cb1 \
-\cb3     \cf7 \strokec7 private\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Accessible\cf0 \strokec4  within the same scope.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 12\cf0 \strokec4 . \cf2 \strokec2 Difference\cf0 \strokec4  \cf2 \strokec2 Between\cf0 \strokec4  \cf7 \strokec7 public\cf0 \strokec4  and \cf7 \strokec7 open\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf7 \strokec7 public\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 You\cf0 \strokec4  can use it anywhere\cf6 \strokec6 ,\cf0 \strokec4  but you can\'92t subclass it outside the module.\cb1 \
-\cb3     \cf7 \strokec7 open\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 You\cf0 \strokec4  can use and subclass it anywhere\cf6 \strokec6 ,\cf0 \strokec4  even outside the module.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 13\cf0 \strokec4 . \cf2 \strokec2 Difference\cf0 \strokec4  \cf2 \strokec2 Between\cf0 \strokec4  \cf7 \strokec7 private\cf0 \strokec4  and \cf7 \strokec7 fileprivate\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf7 \strokec7 private\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Only\cf0 \strokec4  accessible within the same scope (like a single \cf7 \strokec7 class\cf0 \strokec4 ).\cb1 \
-\cb3     \cf7 \strokec7 fileprivate\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Accessible\cf0 \strokec4  anywhere within the same file.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 14\cf0 \strokec4 . \cf2 \strokec2 What\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  the \cf2 \strokec2 Default\cf0 \strokec4  \cf2 \strokec2 Access\cf0 \strokec4  \cf2 \strokec2 Modifier\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 The\cf0 \strokec4  \cf7 \strokec7 default\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  \cf7 \strokec7 internal\cf6 \strokec6 ,\cf0 \strokec4  meaning the property or method \cf7 \strokec7 is\cf0 \strokec4  accessible anywhere within the module.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 15\cf0 \strokec4 . \cf2 \strokec2 Can\cf0 \strokec4  \cf2 \strokec2 We\cf0 \strokec4  \cf2 \strokec2 Access\cf0 \strokec4  \cf2 \strokec2 Private\cf0 \strokec4  \cf2 \strokec2 Variables\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  \cf2 \strokec2 Extensions\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 No\cf6 \strokec6 ,\cf0 \strokec4  \cf7 \strokec7 private\cf0 \strokec4  variables are not accessible \cf7 \strokec7 in\cf0 \strokec4  extensions. \cf2 \strokec2 You\cf0 \strokec4  need to use \cf7 \strokec7 fileprivate\cf0 \strokec4  \cf7 \strokec7 if\cf0 \strokec4  you want to access them within the same file.\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 16\cf0 \strokec4 . \cf2 \strokec2 What\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  a \cf2 \strokec2 Closure\cf6 \strokec6 ?\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 A\cf0 \strokec4  closure \cf7 \strokec7 is\cf0 \strokec4  like a function\cf6 \strokec6 ,\cf0 \strokec4  but you can write it inline. \cf2 \strokec2 It\cf0 \strokec4  can capture and store references to variables and constants from the surrounding context.\cb1 \
-\
-\cb3     \cf2 \strokec2 Swift\cf0 \strokec4  \cf2 \strokec2 Coding\cf0 \strokec4  \cf2 \strokec2 Challenges\cf6 \strokec6 :\cf0 \cb1 \strokec4 \
-\
-\cb3     \cf5 \strokec5 1\cf0 \strokec4 . \cf2 \strokec2 Add\cf0 \strokec4  an \cf2 \strokec2 Extension\cf0 \strokec4  \cf2 \strokec2 Function\cf0 \strokec4  to \cf2 \strokec2 Integer\cf0 \strokec4  \cf2 \strokec2 Array\cf0 \strokec4  to \cf2 \strokec2 Return\cf0 \strokec4  \cf2 \strokec2 Even\cf0 \strokec4  \cf2 \strokec2 Numbers\cf0 \cb1 \strokec4 \
-\
-\cb3     \cf7 \strokec7 extension\cf0 \strokec4  \cf2 \strokec2 Array\cf0 \strokec4  \cf7 \strokec7 where\cf0 \strokec4  \cf2 \strokec2 Element\cf0 \strokec4  \cf6 \strokec6 ==\cf0 \strokec4  \cf2 \strokec2 Int\cf0 \strokec4  \{\cb1 \
-\cb3         \cf7 \strokec7 func\cf0 \strokec4  evenNumbers() \cf6 \strokec6 ->\cf0 \strokec4  [\cf2 \strokec2 Int\cf0 \strokec4 ] \{\cb1 \
-\cb3             \cf7 \strokec7 return\cf0 \strokec4  \cf7 \strokec7 self\cf0 \strokec4 .\cf2 \strokec2 filter\cf0 \strokec4  \{ $\cf5 \strokec5 0\cf0 \strokec4  \cf6 \strokec6 %\cf0 \strokec4  \cf5 \strokec5 2\cf0 \strokec4  \cf6 \strokec6 ==\cf0 \strokec4  \cf5 \strokec5 0\cf0 \strokec4  \}\cb1 \
-\cb3         \}\cb1 \
-\cb3     \}\cb1 \
-\
-\cb3     \cf9 \strokec9 // Example usage:\cf0 \cb1 \strokec4 \
-\cb3     \cf7 \strokec7 let\cf0 \strokec4  numbers \cf6 \strokec6 =\cf0 \strokec4  [\cf5 \strokec5 1\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 2\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 3\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 4\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 5\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 6\cf0 \strokec4 ]\cb1 \
-\cb3     print(numbers.\cf2 \strokec2 evenNumbers\cf0 \strokec4 ())  \cf9 \strokec9 // Output: [2, 4, 6]\cf0 \cb1 \strokec4 \
-\
-\cb3     \cf5 \strokec5 2\cf0 \strokec4 . \cf2 \strokec2 Add\cf0 \strokec4  an \cf2 \strokec2 Extension\cf0 \strokec4  \cf2 \strokec2 Function\cf0 \strokec4  to \cf2 \strokec2 Integer\cf0 \strokec4  \cf2 \strokec2 Array\cf0 \strokec4  to \cf2 \strokec2 Return\cf0 \strokec4  \cf2 \strokec2 Odd\cf0 \strokec4  \cf2 \strokec2 Numbers\cf0 \cb1 \strokec4 \
-\
-\cb3     \cf7 \strokec7 extension\cf0 \strokec4  \cf2 \strokec2 Array\cf0 \strokec4  \cf7 \strokec7 where\cf0 \strokec4  \cf2 \strokec2 Element\cf0 \strokec4  \cf6 \strokec6 ==\cf0 \strokec4  \cf2 \strokec2 Int\cf0 \strokec4  \{\cb1 \
-\cb3         \cf7 \strokec7 func\cf0 \strokec4  oddNumbers() \cf6 \strokec6 ->\cf0 \strokec4  [\cf2 \strokec2 Int\cf0 \strokec4 ] \{\cb1 \
-\cb3             \cf7 \strokec7 return\cf0 \strokec4  \cf7 \strokec7 self\cf0 \strokec4 .\cf2 \strokec2 filter\cf0 \strokec4  \{ $\cf5 \strokec5 0\cf0 \strokec4  \cf6 \strokec6 %\cf0 \strokec4  \cf5 \strokec5 2\cf0 \strokec4  \cf6 \strokec6 !=\cf0 \strokec4  \cf5 \strokec5 0\cf0 \strokec4  \}\cb1 \
-\cb3         \}\cb1 \
-\cb3     \}\cb1 \
-\
-\cb3     \cf9 \strokec9 // Example usage:\cf0 \cb1 \strokec4 \
-\cb3     \cf7 \strokec7 let\cf0 \strokec4  numbers \cf6 \strokec6 =\cf0 \strokec4  [\cf5 \strokec5 1\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 2\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 3\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 4\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 5\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 6\cf0 \strokec4 ]\cb1 \
-\cb3     print(numbers.\cf2 \strokec2 oddNumbers\cf0 \strokec4 ())  \cf9 \strokec9 // Output: [1, 3, 5]\cf0 \cb1 \strokec4 \
-\
-\cb3     \cf5 \strokec5 3\cf0 \strokec4 . \cf2 \strokec2 Find\cf0 \strokec4  the \cf5 \strokec5 2\cf0 \strokec4 nd \cf2 \strokec2 Largest\cf0 \strokec4  \cf2 \strokec2 Number\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  a \cf2 \strokec2 Given\cf0 \strokec4  \cf2 \strokec2 Integer\cf0 \strokec4  \cf2 \strokec2 Array\cf0 \cb1 \strokec4 \
-\
-\cb3     \cf7 \strokec7 func\cf0 \strokec4  secondLargest(\cf7 \strokec7 in\cf0 \strokec4  array\cf6 \strokec6 :\cf0 \strokec4  [\cf2 \strokec2 Int\cf0 \strokec4 ]) \cf6 \strokec6 ->\cf0 \strokec4  \cf2 \strokec2 Int\cf6 \strokec6 ?\cf0 \strokec4  \{\cb1 \
-\cb3         \cf7 \strokec7 let\cf0 \strokec4  sortedArray \cf6 \strokec6 =\cf0 \strokec4  \cf2 \strokec2 Array\cf0 \strokec4 (\cf2 \strokec2 Set\cf0 \strokec4 (array)).\cf2 \strokec2 sorted\cf0 \strokec4 (by\cf6 \strokec6 :\cf0 \strokec4  \cf6 \strokec6 >\cf0 \strokec4 )\cb1 \
-\cb3         \cf7 \strokec7 return\cf0 \strokec4  sortedArray.\cf2 \strokec2 count\cf0 \strokec4  \cf6 \strokec6 >=\cf0 \strokec4  \cf5 \strokec5 2\cf0 \strokec4  \cf6 \strokec6 ?\cf0 \strokec4  sortedArray[\cf5 \strokec5 1\cf0 \strokec4 ] \cf6 \strokec6 :\cf0 \strokec4  \cf7 \strokec7 nil\cf0 \cb1 \strokec4 \
-\cb3     \}\cb1 \
-\
-\cb3     \cf9 \strokec9 // Example usage:\cf0 \cb1 \strokec4 \
-\cb3     \cf7 \strokec7 let\cf0 \strokec4  numbers \cf6 \strokec6 =\cf0 \strokec4  [\cf5 \strokec5 1\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 5\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 2\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 8\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 8\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 3\cf0 \strokec4 ]\cb1 \
-\cb3     \cf7 \strokec7 if\cf0 \strokec4  \cf7 \strokec7 let\cf0 \strokec4  secondLargestNumber \cf6 \strokec6 =\cf0 \strokec4  secondLargest(\cf7 \strokec7 in\cf6 \strokec6 :\cf0 \strokec4  numbers) \{\cb1 \
-\cb3         print(secondLargestNumber)  \cf9 \strokec9 // Output: 5\cf0 \cb1 \strokec4 \
-\cb3     \}\cb1 \
-\
-\cb3     \cf5 \strokec5 4\cf0 \strokec4 . \cf2 \strokec2 Write\cf0 \strokec4  a \cf2 \strokec2 Program\cf0 \strokec4  to \cf2 \strokec2 Print\cf0 \strokec4  \cf2 \strokec2 Fibonacci\cf0 \strokec4  \cf2 \strokec2 Series\cf0 \strokec4  \cf7 \strokec7 for\cf0 \strokec4  \cf2 \strokec2 Given\cf0 \strokec4  \cf2 \strokec2 Input\cf0 \strokec4  n\cb1 \
-\
-\cb3     \cf7 \strokec7 func\cf0 \strokec4  fibonacciSeries(n\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Int\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  [\cf2 \strokec2 Int\cf0 \strokec4 ] \{\cb1 \
-\cb3         \cf7 \strokec7 guard\cf0 \strokec4  n > \cf5 \strokec5 0\cf0 \strokec4  \cf7 \strokec7 else\cf0 \strokec4  \{ \cf7 \strokec7 return\cf0 \strokec4  [] \}\cb1 \
-\cb3         \cf7 \strokec7 var\cf0 \strokec4  series \cf6 \strokec6 =\cf0 \strokec4  [\cf5 \strokec5 1\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 1\cf0 \strokec4 ]\cb1 \
-\cb3         \cf7 \strokec7 while\cf0 \strokec4  series.\cf2 \strokec2 count\cf0 \strokec4  < n \{\cb1 \
-\cb3             \cf7 \strokec7 let\cf0 \strokec4  next \cf6 \strokec6 =\cf0 \strokec4  series[series.\cf2 \strokec2 count\cf0 \strokec4  \cf6 \strokec6 -\cf0 \strokec4  \cf5 \strokec5 1\cf0 \strokec4 ] \cf6 \strokec6 +\cf0 \strokec4  series[series.\cf2 \strokec2 count\cf0 \strokec4  \cf6 \strokec6 -\cf0 \strokec4  \cf5 \strokec5 2\cf0 \strokec4 ]\cb1 \
-\cb3             series.\cf2 \strokec2 append\cf0 \strokec4 (next)\cb1 \
-\cb3         \}\cb1 \
-\cb3         \cf7 \strokec7 return\cf0 \strokec4  \cf2 \strokec2 Array\cf0 \strokec4 (series.\cf2 \strokec2 prefix\cf0 \strokec4 (n))\cb1 \
-\cb3     \}\cb1 \
-\
-\cb3     \cf9 \strokec9 // Example usage:\cf0 \cb1 \strokec4 \
-\cb3     \cf7 \strokec7 let\cf0 \strokec4  fibSeries \cf6 \strokec6 =\cf0 \strokec4  fibonacciSeries(n\cf6 \strokec6 :\cf0 \strokec4  \cf5 \strokec5 8\cf0 \strokec4 )\cb1 \
-\cb3     print(fibSeries)  \cf9 \strokec9 // Output: [1, 1, 2, 3, 5, 8, 13, 21]\cf0 \cb1 \strokec4 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf9 \cb3 \strokec9 // Tuppple\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 func\cf0 \strokec4  getLocation() \cf6 \strokec6 ->\cf0 \strokec4  (\cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  \cf2 \strokec2 Double\cf0 \strokec4 ) \{\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3   \cf7 \strokec7 return\cf0 \strokec4  (\cf5 \strokec5 10.4\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 11.67\cf0 \strokec4 )\cb1 \
-\cb3 \}\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 let\cf0 \strokec4  location \cf6 \strokec6 =\cf0 \strokec4  getLocation()\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 print(location.\cf2 \strokec2 lat\cf0 \strokec4 )\cb1 \
-\cb3 print(location.\cf2 \strokec2 long\cf0 \strokec4 )\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 let\cf0 \strokec4  l1\cf6 \strokec6 :\cf0 \strokec4  (lat\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Double\cf6 \strokec6 ,\cf0 \strokec4  long\cf6 \strokec6 :\cf2 \strokec2 Double\cf0 \strokec4 ) \cf6 \strokec6 =\cf0 \strokec4  ().....\cf2 \strokec2 not\cf0 \strokec4  finished\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf9 \cb3 \strokec9 //Dictionary\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 let\cf0 \strokec4  user \cf6 \strokec6 =\cf0 \strokec4  [\cf2 \strokec2 String\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 String\cf0 \strokec4 ]()\cb1 \
-\cf7 \cb3 \strokec7 let\cf0 \strokec4  user1\cf6 \strokec6 :\cf0 \strokec4  [\cf2 \strokec2 String\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 String\cf0 \strokec4 ] \cf6 \strokec6 =\cf0 \strokec4  [\cf6 \strokec6 :\cf0 \strokec4 ]\cb1 \
-\cf7 \cb3 \strokec7 let\cf0 \strokec4  user2 \cf6 \strokec6 =\cf0 \strokec4  [ \cf8 \strokec8 "name"\cf0 \strokec4  \cf6 \strokec6 :\cf0 \strokec4  \cf8 \strokec8 "alex"\cf6 \strokec6 ,\cf0 \strokec4  \cf8 \strokec8 "age"\cf0 \strokec4  \cf6 \strokec6 :\cf0 \strokec4  \cf8 \strokec8 "23"\cf0 \strokec4 ]\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3 user2[\cf8 \strokec8 "name"\cf0 \strokec4 ] \cf6 \strokec6 =\cf0 \strokec4  \cf8 \strokec8 "max"\cf0 \cb1 \strokec4 \
-\
-\cb3 print(user2)\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf9 \cb3 \strokec9 //Points about Dictionary\cf0 \cb1 \strokec4 \
-\
-\cf9 \cb3 \strokec9 // Dict are unordered \cf0 \cb1 \strokec4 \
-\cf9 \cb3 \strokec9 // 2. can have key value pairs, will not have duplicate keys\cf0 \cb1 \strokec4 \
-\
-\cf9 \cb3 \strokec9 // Set\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 var\cf0 \strokec4  names \cf6 \strokec6 =\cf0 \strokec4  \cf2 \strokec2 Set\cf0 \strokec4 <\cf2 \strokec2 String\cf6 \strokec6 >\cf0 \strokec4 ()\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf9 \cb3 \strokec9 // Array \cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 var\cf0 \strokec4  names1 \cf6 \strokec6 =\cf0 \strokec4  \cf2 \strokec2 Array\cf0 \strokec4 <\cf2 \strokec2 String\cf6 \strokec6 >\cf0 \strokec4 ()\cb1 \
-\
-\cf7 \cb3 \strokec7 func\cf0 \strokec4  removeDuplicates(from array\cf6 \strokec6 :\cf0 \strokec4  [\cf2 \strokec2 String\cf0 \strokec4 ] \cf6 \strokec6 ->\cf0 \strokec4  [\cf2 \strokec2 String\cf0 \strokec4 ]\{\cb1 \
-\
-\cf7 \cb3 \strokec7 var\cf0 \strokec4  uniqueElements\cf6 \strokec6 :\cf0 \strokec4  [\cf2 \strokec2 String\cf0 \strokec4 ] \cf6 \strokec6 =\cf0 \strokec4  []\cb1 \
-\cf7 \cb3 \strokec7 var\cf0 \strokec4  seenElements\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Set\cf0 \strokec4 <\cf2 \strokec2 String\cf0 \strokec4 > \cf6 \strokec6 =\cf0 \strokec4  []\cb1 \
-\
-\cf7 \cb3 \strokec7 for\cf0 \strokec4  element \cf7 \strokec7 in\cf0 \strokec4  array \{\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3        \cf7 \strokec7 if\cf0 \strokec4  \cf6 \strokec6 !seenElements\cf0 \strokec4 .\cf2 \strokec2 contains\cf0 \strokec4 (element)\cb1 \
-\
-\cb3 \}\cb1 \
-\cb3 \})\cb1 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf9 \cb3 \strokec9 //iOS app states\cf0 \cb1 \strokec4 \
-\
-\cf9 \cb3 \strokec9 // there are 5 states \cf0 \cb1 \strokec4 \
-\cf9 \cb3 \strokec9 // 1 not running\cf0 \cb1 \strokec4 \
-\cf9 \cb3 \strokec9 // 2 in active\cf0 \cb1 \strokec4 \
-\cf9 \cb3 \strokec9 //3. Active\cf0 \cb1 \strokec4 \
-\cf9 \cb3 \strokec9 //4. Background\cf0 \cb1 \strokec4 \
-\cf9 \cb3 \strokec9 //5. Suspended\cf0 \cb1 \strokec4 \
-\
-\cf9 \cb3 \strokec9 // when app is in foreground than it will be either in active or inactive state\cf0 \cb1 \strokec4 \
-\cf9 \cb3 \strokec9 // when app is in background than it will be eitehr in Background or suspend state\cf0 \cb1 \strokec4 \
-\
-\
-\
-\cf9 \cb3 \strokec9 // Assignment 4 \cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 1\cf0 \strokec4 . \cf2 \strokec2 Difference\cf0 \strokec4  \cf2 \strokec2 Between\cf0 \strokec4  \cf2 \strokec2 Set\cf6 \strokec6 ,\cf0 \strokec4  \cf2 \strokec2 Array\cf6 \strokec6 ,\cf0 \strokec4  and \cf2 \strokec2 Dictionary\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf2 \strokec2 Array\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 An\cf0 \strokec4  array \cf7 \strokec7 is\cf0 \strokec4  like a list \cf7 \strokec7 where\cf0 \strokec4  items are kept \cf7 \strokec7 in\cf0 \strokec4  order. \cf2 \strokec2 You\cf0 \strokec4  can have duplicates\cf6 \strokec6 ,\cf0 \strokec4  and you \cf7 \strokec7 get\cf0 \strokec4  to access each item by its position. \cf2 \strokec2 Think\cf0 \strokec4  of it like a numbered list\cf6 \strokec6 :\cf0 \cb1 \strokec4 \
-\cb3         \cf2 \strokec2 Example\cf6 \strokec6 :\cf0 \strokec4  [\cf8 \strokec8 "apple"\cf6 \strokec6 ,\cf0 \strokec4  \cf8 \strokec8 "banana"\cf6 \strokec6 ,\cf0 \strokec4  \cf8 \strokec8 "apple"\cf0 \strokec4 ]. \cf2 \strokec2 Here\cf6 \strokec6 ,\cf0 \strokec4  \cf8 \strokec8 "apple"\cf0 \strokec4  shows up twice and stays \cf7 \strokec7 in\cf0 \strokec4  the same order.\cb1 \
-\
-\cb3     \cf2 \strokec2 Set\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 A\cf0 \strokec4  \cf7 \strokec7 set\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  like a collection of unique items that aren\'92t \cf7 \strokec7 in\cf0 \strokec4  any particular order. \cf2 \strokec2 It\cf0 \strokec4  automatically removes duplicates \cf7 \strokec7 for\cf0 \strokec4  you. \cf2 \strokec2 You\cf0 \strokec4  can\'92t ask \cf7 \strokec7 for\cf0 \strokec4  the first or second item because they aren\'92t \cf7 \strokec7 in\cf0 \strokec4  any specific order.\cb1 \
-\cb3         \cf2 \strokec2 Example\cf6 \strokec6 :\cf0 \strokec4  [\cf8 \strokec8 "apple"\cf6 \strokec6 ,\cf0 \strokec4  \cf8 \strokec8 "banana"\cf0 \strokec4 ]. \cf2 \strokec2 Even\cf0 \strokec4  \cf7 \strokec7 if\cf0 \strokec4  you \cf7 \strokec7 try\cf0 \strokec4  to add another \cf8 \strokec8 "apple,"\cf0 \strokec4  it\'92s only kept once.\cb1 \
-\
-\cb3     \cf2 \strokec2 Dictionary\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 A\cf0 \strokec4  dictionary \cf7 \strokec7 is\cf0 \strokec4  like a phone book. \cf2 \strokec2 It\cf0 \strokec4  has a unique key (like a name) linked to a value (like a phone number). \cf2 \strokec2 You\cf0 \strokec4  look things up by the key\cf6 \strokec6 ,\cf0 \strokec4  not by position.\cb1 \
-\cb3         \cf2 \strokec2 Example\cf6 \strokec6 :\cf0 \strokec4  [\cf8 \strokec8 "name"\cf6 \strokec6 :\cf0 \strokec4  \cf8 \strokec8 "John"\cf6 \strokec6 ,\cf0 \strokec4  \cf8 \strokec8 "age"\cf6 \strokec6 :\cf0 \strokec4  \cf5 \strokec5 25\cf0 \strokec4 ]. \cf2 \strokec2 Here\cf6 \strokec6 ,\cf0 \strokec4  \cf8 \strokec8 "name"\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  a key\cf6 \strokec6 ,\cf0 \strokec4  and \cf8 \strokec8 "John"\cf0 \strokec4  \cf7 \strokec7 is\cf0 \strokec4  the value \cf7 \strokec7 for\cf0 \strokec4  that key.\cb1 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf5 \cb3 \strokec5 2\cf0 \strokec4 . \cf2 \strokec2 Counting\cf0 \strokec4  \cf2 \strokec2 Characters\cf0 \strokec4  \cf7 \strokec7 in\cf0 \strokec4  a \cf2 \strokec2 String\cf0 \cb1 \strokec4 \
-\
-\pard\pardeftab720\partightenfactor0
-\cf7 \cb3 \strokec7 func\cf0 \strokec4  countCharacters(\cf7 \strokec7 in\cf0 \strokec4  input\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 String\cf0 \strokec4 ) \cf6 \strokec6 ->\cf0 \strokec4  [\cf2 \strokec2 Character\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Int\cf0 \strokec4 ] \{\cb1 \
-\pard\pardeftab720\partightenfactor0
-\cf0 \cb3     \cf7 \strokec7 var\cf0 \strokec4  characterCount\cf6 \strokec6 :\cf0 \strokec4  [\cf2 \strokec2 Character\cf6 \strokec6 :\cf0 \strokec4  \cf2 \strokec2 Int\cf0 \strokec4 ] \cf6 \strokec6 =\cf0 \strokec4  [\cf6 \strokec6 :\cf0 \strokec4 ] \cf9 \strokec9 // Create an empty dictionary to store counts\cf0 \cb1 \strokec4 \
-\
-\cb3     \cf7 \strokec7 for\cf0 \strokec4  char \cf7 \strokec7 in\cf0 \strokec4  input \{ \cf9 \strokec9 // Loop through each character in the string\cf0 \cb1 \strokec4 \
-\cb3         \cf7 \strokec7 if\cf0 \strokec4  \cf7 \strokec7 let\cf0 \strokec4  count \cf6 \strokec6 =\cf0 \strokec4  characterCount[char] \{ \cf9 \strokec9 // If the character is already in the dictionary\cf0 \cb1 \strokec4 \
-\cb3             characterCount[char] \cf6 \strokec6 =\cf0 \strokec4  count \cf6 \strokec6 +\cf0 \strokec4  \cf5 \strokec5 1\cf0 \strokec4  \cf9 \strokec9 // Increase the count by 1\cf0 \cb1 \strokec4 \
-\cb3         \} \cf7 \strokec7 else\cf0 \strokec4  \{\cb1 \
-\cb3             characterCount[char] \cf6 \strokec6 =\cf0 \strokec4  \cf5 \strokec5 1\cf0 \strokec4  \cf9 \strokec9 // If it\'92s not in the dictionary, add it with a count of 1\cf0 \cb1 \strokec4 \
-\cb3         \}\cb1 \
-\cb3     \}\cb1 \
-\
-\cb3     \cf7 \strokec7 return\cf0 \strokec4  characterCount \cf9 \strokec9 // Return the dictionary with character counts\cf0 \cb1 \strokec4 \
-\cb3 \}\cb1 \
-\
-\
-\pard\pardeftab720\partightenfactor0
-\cf2 \cb3 \strokec2 Explaination\cf6 \strokec6 :\cf0 \cb1 \strokec4 \
-\
-\cf2 \cb3 \strokec2 We\cf0 \strokec4  first create a function called countCharacters that takes a string and returns a dictionary. \cf2 \strokec2 This\cf0 \strokec4  dictionary will store each character and how many times it appears.\cb1 \
-\
-\cf2 \cb3 \strokec2 We\cf0 \strokec4  start by making an empty dictionary because we need somewhere to store the counts.\cb1 \
-\
-\cf2 \cb3 \strokec2 Then\cf6 \strokec6 ,\cf0 \strokec4  we loop through each character \cf7 \strokec7 in\cf0 \strokec4  the string to check it one by one.\cb1 \
-\
-\cf2 \cb3 \strokec2 If\cf0 \strokec4  the character \cf7 \strokec7 is\cf0 \strokec4  already \cf7 \strokec7 in\cf0 \strokec4  the dictionary\cf6 \strokec6 ,\cf0 \strokec4  we add \cf5 \strokec5 1\cf0 \strokec4  to its count.\cb1 \
-\
-\cf2 \cb3 \strokec2 If\cf0 \strokec4  the character isn\'92t \cf7 \strokec7 in\cf0 \strokec4  the dictionary yet\cf6 \strokec6 ,\cf0 \strokec4  we add it with a count of \cf5 \strokec5 1\cf0 \strokec4  because it\'92s the first time we see it.\cb1 \
-\
-\cf2 \cb3 \strokec2 After\cf0 \strokec4  we finish checking all the characters\cf6 \strokec6 ,\cf0 \strokec4  we \cf7 \strokec7 return\cf0 \strokec4  the dictionary that now shows how many times each character appears.\cb1 \
-\
-\cf2 \cb3 \strokec2 For\cf0 \strokec4  example\cf6 \strokec6 ,\cf0 \strokec4  with the input \cf8 \strokec8 "abcapplebook"\cf6 \strokec6 ,\cf0 \strokec4  the output will show that there are \cf5 \strokec5 2\cf0 \strokec4  \'91a\'92s\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 2\cf0 \strokec4  \'91b\'92s\cf6 \strokec6 ,\cf0 \strokec4  \cf5 \strokec5 1\cf0 \strokec4  \'91c\'92\cf6 \strokec6 ,\cf0 \strokec4  and so on.\cb1 \
-\
-\
-\
-\cf2 \cb3 \strokec2 Internal\cf0 \strokec4  \cf6 \strokec6 -\cf0 \strokec4  \cf7 \strokec7 default\cf6 \strokec6 ,\cf0 \strokec4  no explicit indicator\cf6 \strokec6 ,\cf0 \strokec4  accessible anywhere \cf7 \strokec7 in\cf0 \strokec4  project\cb1 \
-\cf2 \cb3 \strokec2 Private\cf0 \strokec4  \cf6 \strokec6 -\cf0 \strokec4  \cf2 \strokec2 Only\cf0 \strokec4  accessible \cf7 \strokec7 in\cf0 \strokec4  current scope\cb1 \
-\cf2 \cb3 \strokec2 Public\cf0 \strokec4  \cf6 \strokec6 -\cf0 \strokec4  \cf2 \strokec2 Accessible\cf0 \strokec4  outside of project\cf6 \strokec6 ,\cf0 \strokec4  accessible but not inheritable or extendible\cb1 \
-\cf2 \cb3 \strokec2 Open\cf0 \strokec4  \cf6 \strokec6 -\cf0 \strokec4  \cf2 \strokec2 Accessible\cf0 \strokec4  outside of project\cf6 \strokec6 ,\cf0 \strokec4  inheritable and extendable\cb1 \
-\cf2 \cb3 \strokec2 File\cf0 \strokec4  \cf2 \strokec2 Private\cf0 \strokec4  \cf6 \strokec6 -\cf0 \strokec4  \cf2 \strokec2 Only\cf0 \strokec4  accessible \cf7 \strokec7 in\cf0 \strokec4  current scope\cb1 \
-\
-\
-\
+
+1. Value Type vs. Reference Type
+
+    Value Type: Makes a copy when assigned or passed (like struct and enum).
+    Reference Type: Doesn’t copy, it just shares the same instance (like class).
+
+2. Difference Between Classes and Structs
+
+    Class: Reference type, supports inheritance.
+    Struct: Value type, no inheritance.
+
+3. When to Use Classes vs. Structs
+
+    Use class when you need inheritance or reference sharing.
+    Use struct for simpler data that doesn't need inheritance and can be copied easily.
+
+4. Advantages of Structs Over Classes (or Vice Versa)
+
+    Structs: Faster because of value copying, safer with no shared states.
+    Classes: Better for complex models, supports inheritance.
+
+5. What is an Enum?
+
+    An enum is a type that has a set of predefined cases. Like a list of related values you can pick from.
+
+6. Difference Between Raw Values and Associated Values
+
+    Raw Values: Fixed values like enum Direction: String { case up = "UP" }.
+    Associated Values: Extra info you attach to each case like case success(message: String).
+
+7. How to Make a Function Optional in a Protocol
+
+    Use @objc before the protocol and add optional before the method, like:
+
+    @obj protocal MyProtocol {
+      @obj optional func myFunction()
+    }
+
+    
+8. What is a Protocol?
+
+    A protocol is like a contract that lists what properties and methods a conforming type should have.
+
+9. What is Inheritance?
+
+    Inheritance means one class can "inherit" properties and methods from another class.
+
+10. Different Types of Inheritance
+
+    Single Inheritance: A class inherits from one parent.
+    Multiple Inheritance: Inheriting from multiple classes (not directly supported in Swift).
+
+11. Is Multiple Inheritance Supported in iOS Swift?
+
+    No, Swift doesn’t support multiple inheritance. You can use protocols instead.
+
+12. What are Initializers, and Their Uses?
+
+    Initializers set up your object when it’s created. They give initial values to properties.
+
+
+Example of 3 Entities with 5 Attributes and 3 Actions
+
+    Car
+        Attributes: make, model, year, color, mileage
+        Actions: drive(), park(), honk()
+
+    Phone
+        Attributes: brand, model, storage, batteryLevel, screenSize
+        Actions: call(), text(), browse()
+
+    Book
+        Attributes: title, author, pages, genre, publisher
+        Actions: read(), bookmarkPage(), rate()
+
+
+Function to Find Largest Number in Integer Array
+
+func findLargestNumber(in array: [Int]) -> Int? {
+    return array.max()
 }
+
+Create a Calculator Class with Protocol for Addition, Subtraction, Multiplication, and Division
+
+import UIKit
+
+protocol Calculatable {
+    func add(_ a: Double, _ b: Double) -> Double
+    func subtract(_ a: Double, _ b: Double) -> Double
+    func multiply(_ a: Double, _ b: Double) -> Double
+    func divide(_ a: Double, _ b: Double) -> Double?
+}
+
+class Calculator: Calculatable {
+    func add(_ a: Double, _ b: Double) -> Double {
+        return a + b
+    }
+   
+    func subtract(_ a: Double, _ b: Double) -> Double {
+        return a - b
+    }
+   
+    func multiply(_ a: Double, _ b: Double) -> Double {
+        return a * b
+    }
+   
+    func divide(_ a: Double, _ b: Double) -> Double? {
+        return b != 0 ? a / b : nil
+    }
+}
+
+
+Explanation:
+
+
+1. protocol Calculatable:
+This is where we define a protocol, which is basically a blueprint for methods a class has to follow. The Calculatable protocol lists four functions: add, subtract, multiply, and divide. Any class that uses this protocol must include these functions.
+
+2. class Calculator: Calculatable:
+This is the main class. It follows (or conforms to) the Calculatable protocol, meaning it has to include the add, subtract, multiply, and divide methods.
+
+3. Function Details:
+
+    add(_ a: Double, _ b: Double) -> Double: Adds two numbers.
+    subtract(_ a: Double, _ b: Double) -> Double: Subtracts the second number from the first one.
+    multiply(_ a: Double, _ b: Double) -> Double: Multiplies the two numbers together.
+    divide(_ a: Double, _ b: Double) -> Double?: Divides the first number by the second. Since dividing by zero isn’t allowed, this function returns an optional (meaning it can be nil if the division is invalid).
+
+4. Example Usage: We make a Calculator object called myCalculator. Then, we can use it to add or divide numbers. When dividing by zero, it gives us nil, so the app doesn’t crash.
+
+
+Assignment 3 - 8/16
+
+
+1. Difference Between guard let and if let
+
+    if let: Used when you want to unwrap an optional and run code only if it has a value. The rest of the code is nested inside the if block.
+    guard let: Also used for unwrapping optionals, but it’s better when you want to exit early if the optional is nil. It’s more of an early exit check.
+
+2. When to Use guard let vs. if let
+
+    Use if let when you only need to do something specific when the optional has a value.
+    Use guard let when you want to ensure the optional has a value before continuing, and you need to exit early if it doesn’t.
+
+3. Different Types of Properties
+
+    Stored Properties: These store values in classes or structs.
+    Computed Properties: These don’t store values but calculate them when accessed.
+    Lazy Properties: These are only calculated once when they’re needed.
+
+4. Difference Between Stored and Computed Properties
+
+    Stored properties hold a value directly.
+    Computed properties calculate a value on the fly whenever you access them.
+
+5. When to Use Lazy Properties
+
+    Use them when the property’s value takes a lot of resources to calculate, and you don’t want it to be done until it’s really needed.
+
+6. Advantage of Using Lazy Properties
+
+    They save resources by not initializing until they’re first used.
+
+7. What is a Static Property?
+
+    A static property belongs to the type itself, not instances of the type. All instances share the same static property.
+
+8. What is an Extension?
+
+    Extensions let you add new functionality to existing classes, structs, or enums without modifying their original code.
+
+9. What Makes Extensions Powerful?
+
+    They allow you to add functions, initializers, and computed properties to existing types, even ones you don’t own (like those from the system).
+
+10. Can We Add Properties in Extensions?
+
+    You can only add computed properties, not stored properties, in extensions.
+
+11. Different Access Modifiers
+
+    public: Accessible from anywhere.
+    open: Like public, but also allows subclassing outside the module.
+    internal: Accessible within the module.
+    fileprivate: Accessible within the same file.
+    private: Accessible within the same scope.
+
+12. Difference Between public and open
+
+    public: You can use it anywhere, but you can’t subclass it outside the module.
+    open: You can use and subclass it anywhere, even outside the module.
+
+13. Difference Between private and fileprivate
+
+    private: Only accessible within the same scope (like a single class).
+    fileprivate: Accessible anywhere within the same file.
+
+14. What is the Default Access Modifier?
+
+    The default is internal, meaning the property or method is accessible anywhere within the module.
+
+15. Can We Access Private Variables in Extensions?
+
+    No, private variables are not accessible in extensions. You need to use fileprivate if you want to access them within the same file.
+
+16. What is a Closure?
+
+    A closure is like a function, but you can write it inline. It can capture and store references to variables and constants from the surrounding context.
+
+    Swift Coding Challenges:
+
+    1. Add an Extension Function to Integer Array to Return Even Numbers
+
+    extension Array where Element == Int {
+        func evenNumbers() -> [Int] {
+            return self.filter { $0 % 2 == 0 }
+        }
+    }
+
+    // Example usage:
+    let numbers = [1, 2, 3, 4, 5, 6]
+    print(numbers.evenNumbers())  // Output: [2, 4, 6]
+
+    2. Add an Extension Function to Integer Array to Return Odd Numbers
+
+    extension Array where Element == Int {
+        func oddNumbers() -> [Int] {
+            return self.filter { $0 % 2 != 0 }
+        }
+    }
+
+    // Example usage:
+    let numbers = [1, 2, 3, 4, 5, 6]
+    print(numbers.oddNumbers())  // Output: [1, 3, 5]
+
+    3. Find the 2nd Largest Number in a Given Integer Array
+
+    func secondLargest(in array: [Int]) -> Int? {
+        let sortedArray = Array(Set(array)).sorted(by: >)
+        return sortedArray.count >= 2 ? sortedArray[1] : nil
+    }
+
+    // Example usage:
+    let numbers = [1, 5, 2, 8, 8, 3]
+    if let secondLargestNumber = secondLargest(in: numbers) {
+        print(secondLargestNumber)  // Output: 5
+    }
+
+    4. Write a Program to Print Fibonacci Series for Given Input n
+
+    func fibonacciSeries(n: Int) -> [Int] {
+        guard n > 0 else { return [] }
+        var series = [1, 1]
+        while series.count < n {
+            let next = series[series.count - 1] + series[series.count - 2]
+            series.append(next)
+        }
+        return Array(series.prefix(n))
+    }
+
+    // Example usage:
+    let fibSeries = fibonacciSeries(n: 8)
+    print(fibSeries)  // Output: [1, 1, 2, 3, 5, 8, 13, 21]
+
+
+// Tuppple
+
+func getLocation() -> (Double, Double) {
+  return (10.4, 11.67)
+}
+
+let location = getLocation()
+
+print(location.lat)
+print(location.long)
+
+let l1: (lat: Double, long:Double) = ().....not finished
+
+//Dictionary
+
+let user = [String: String]()
+let user1: [String: String] = [:]
+let user2 = [ "name" : "alex", "age" : "23"]
+
+user2["name"] = "max"
+
+print(user2)
+
+//Points about Dictionary
+
+// Dict are unordered 
+// 2. can have key value pairs, will not have duplicate keys
+
+// Set
+
+var names = Set<String>()
+
+// Array 
+
+var names1 = Array<String>()
+
+func removeDuplicates(from array: [String] -> [String]{
+
+var uniqueElements: [String] = []
+var seenElements: Set<String> = []
+
+for element in array {
+
+       if !seenElements.contains(element)
+
+}
+})
+
+//iOS app states
+
+// there are 5 states 
+// 1 not running
+// 2 in active
+//3. Active
+//4. Background
+//5. Suspended
+
+// when app is in foreground than it will be either in active or inactive state
+// when app is in background than it will be eitehr in Background or suspend state
+
+
+
+// Assignment 4 
+
+1. Difference Between Set, Array, and Dictionary
+
+    Array: An array is like a list where items are kept in order. You can have duplicates, and you get to access each item by its position. Think of it like a numbered list:
+        Example: ["apple", "banana", "apple"]. Here, "apple" shows up twice and stays in the same order.
+
+    Set: A set is like a collection of unique items that aren’t in any particular order. It automatically removes duplicates for you. You can’t ask for the first or second item because they aren’t in any specific order.
+        Example: ["apple", "banana"]. Even if you try to add another "apple," it’s only kept once.
+
+    Dictionary: A dictionary is like a phone book. It has a unique key (like a name) linked to a value (like a phone number). You look things up by the key, not by position.
+        Example: ["name": "John", "age": 25]. Here, "name" is a key, and "John" is the value for that key.
+
+
+2. Counting Characters in a String
+
+func countCharacters(in input: String) -> [Character: Int] {
+    var characterCount: [Character: Int] = [:] // Create an empty dictionary to store counts
+
+    for char in input { // Loop through each character in the string
+        if let count = characterCount[char] { // If the character is already in the dictionary
+            characterCount[char] = count + 1 // Increase the count by 1
+        } else {
+            characterCount[char] = 1 // If it’s not in the dictionary, add it with a count of 1
+        }
+    }
+
+    return characterCount // Return the dictionary with character counts
+}
+
+
+Explaination:
+
+We first create a function called countCharacters that takes a string and returns a dictionary. This dictionary will store each character and how many times it appears.
+
+We start by making an empty dictionary because we need somewhere to store the counts.
+
+Then, we loop through each character in the string to check it one by one.
+
+If the character is already in the dictionary, we add 1 to its count.
+
+If the character isn’t in the dictionary yet, we add it with a count of 1 because it’s the first time we see it.
+
+After we finish checking all the characters, we return the dictionary that now shows how many times each character appears.
+
+For example, with the input "abcapplebook", the output will show that there are 2 ‘a’s, 2 ‘b’s, 1 ‘c’, and so on.
+
+
+
+Internal - default, no explicit indicator, accessible anywhere in project
+Private - Only accessible in current scope
+Public - Accessible outside of project, accessible but not inheritable or extendible
+Open - Accessible outside of project, inheritable and extendable
+File Private - Only accessible in current scope
+
+
